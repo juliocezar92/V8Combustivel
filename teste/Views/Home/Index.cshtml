@@ -1,0 +1,171 @@
+﻿@model RelatorioModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Abastece rapido</title>
+    
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing:border-box;
+        }
+        .grid
+        {
+            display:grid;
+            grid-template-columns: 4fr 500px;
+            grid-gap: 10px;
+            max-width: 800px;
+            padding:40px;
+            margin:6 auto;
+        }
+       .quadrado
+       {
+           width: 200px;
+           height: 100px;
+           background-color:gold;
+           justify-content: center;
+           align-items: center;
+           text-align: center;
+       }
+
+        .quadrado_1 {
+            width: 200px;
+            height: 100px;
+            background-color:red;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+        }
+
+        .quadrado_2 {
+            width: 200px;
+            height: 100px;
+            background-color:chartreuse;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .quadrado_3 {
+            width: 200px;
+            height: 100px;
+            background-color:black;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color:aliceblue;
+        }
+
+        .preco
+        {
+            justify-content:center;
+            align-content:center;
+            text-align:center;
+            font-size: 2rem;
+        }
+
+        .aditivada
+        {
+            justify-content: center;
+            align-content: center;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .diesel {
+            justify-content: center;
+            align-content: center;
+            text-align: center;
+            font-size: 2rem;
+            color:aliceblue;
+        }
+        
+        .relatorio_index
+        {
+            width: 750px;
+            height:100px;
+        }
+
+    </style>
+
+</head>
+
+    <body>
+     <section class="grid">
+        <div class="siderbar">
+            <div class="quadrado"><h5>Gasolina Comum</h5><p class="preco">R$ 4,98</p></div>
+            <div class="quadrado_1"><h5>Gasolina Aditivada</h5><p class="aditivada">R$ 5,19</p></div>
+            <div class="quadrado_2"><h5>Etanol</h5><p class="preco">R$ 3,89</p></div>
+        </div>
+        <div class="relatorio_index">
+            <form asp-controller="Home" asp-action="Criar" method="post">
+                <div class="form-group col-md-4">
+                    <label for="inputState">Bomba de combústivel</label>
+                    <select id="inputState" asp-for="Bomba" class="form-control">
+                        <option selected>Bico_01</option>
+                        <option>Bico_02</option>
+                        <option>Bico_03</option>
+                        <option>Bico_04</option>
+                        <option>Bico_05</option>
+                        <option>Bico_06</option>
+                        <option>Bico_07</option>
+                        <option>Bico_08</option>
+
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputState">Bomba de combústivel</label>
+                    <select id="inputState" asp-for="Combustivel" class="form-control">
+                        <option selected>Gasolina comum</option>
+                        <option>Gasolina Aditivada</option>
+                        <option>Etanol</option>
+                        <option>Diesel</option>
+                    </select>
+                </div>
+                <br />
+                <div class="input-group col-md-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Valor abastecido R$:</span>
+                    </div>
+                    <input type="text" asp-for="Valor" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputState">Tipo de Pagamento</label>
+                    <select id="inputState" asp-for="Pagamento" class="form-control">
+                        <option selected>Dinheiro</option>
+                        <option>Débito</option>
+                        <option>Crédito</option>
+                    </select>
+                </div>
+                <br />
+                
+                
+                <button type="submit" class="btn btn-primary">Salvar</button>
+            </form>
+        </div>
+            <div class="quadrado_3"><h5>Diesel</h5><p class="diesel">R$ 4,35</p></div>
+        <div>
+        </div>
+        <div>6</div>
+        <div class="mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3526.4724184693832!2d-54.650681734586065!3d-20.54033975841221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9486ef008e14d8ed%3A0x927b930b43036c5a!2sRede%20Faleiros%20Posto%20Refer%C3%AAncia!5e0!3m2!1spt-BR!2sbr!4v1677278550076!5m2!1spt-BR!2sbr" width="700" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div>
+
+        </div>
+
+        <div >
+            <h2>Rede Faleiros Posto Referência</h2>
+            Av. Guaicurus, 9194 - Jardim Centenario, Campo Grande - MS, 79062-310
+        </div>
+     </section>
+
+    </body>
+</html>
+
